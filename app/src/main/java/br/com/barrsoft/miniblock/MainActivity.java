@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String FILE_PREFERENCES = "FILE_PREFERENCES_MODE_0";
     @BindView(R.id.editText)
-    EditText editText;
+    TextView editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(FILE_PREFERENCES,0);
         if (sharedPreferences.contains("anotation")){
             String recoveryText = sharedPreferences.getString("anotation","Null");
-            if (recoveryText.length() == 0){
+            if (recoveryText.length() == 0 || editText.getText() == null){
                 editText.setText(getResources().getString(R.string.welcome));
             }else{
                 editText.setText(recoveryText);
