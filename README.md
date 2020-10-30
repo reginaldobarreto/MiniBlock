@@ -1,11 +1,11 @@
 # MiniBlock
 
 ## Sobre o APP 
-Esse aplicativo xxxxxx
+Esse aplicativo aplicamos o conteudo de recuperação de dados via sharedpreferences
 ## Conhecimento aplicado
 * Butter Knife
-* xxxx
-* xxxx
+* sharedpreferences
+
 
 ## Screeshots
 
